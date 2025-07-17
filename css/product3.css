@@ -1,0 +1,576 @@
+@charset "utf-8";
+
+/* 여백초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #101010;
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* 기본(네이티브) 모양을 제거 */
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+    display: none; /* X 버튼 및 검색 결과 버튼 숨기기 */
+}
+/* 탑버튼 부드럽게 */
+html{
+    scroll-behavior: smooth;
+}
+/* 페이지 설정 */
+body {
+    font-family: "Pretendard", "Poetsen One";
+    line-height: 1.5;
+    font-size: 17px;
+    color: #101010;
+    min-width: 1320px;
+    /* 이유는 모르겠지만 가로 스크롤 생겨서 없애려고 급하게넣음 */
+}
+
+/* 탑버튼 */
+.btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    animation: top_btn 1.2s alternate infinite linear;
+}
+
+.btn:hover {
+    animation: none;
+}
+
+@keyframes top_btn {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
+/* 헤더 */
+#header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.8s ease;
+    /* backdrop-filter: blur(4px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 부드러운 애니메이션 */
+    transition: all 1s;
+}
+
+/* 자바스크립트로 추가될 클래스 */
+#header.nav-up {
+    /* 헤더 높이만큼 주기 */
+    top: -76px;
+}
+
+.gnb {
+    width: 1320px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gnb .logo > img {
+    display: block;
+    /* padding: 12.4px; */
+}
+.gnb_icon{
+    display: flex;
+}
+.gnb_icon > li > a{
+    margin-left: 20px;
+}
+
+.nav {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.nav>li>a {
+    display: block;
+    margin: 25px 30px;
+    font-family: "Poetsen One";
+    /* font-weight: 900; */
+    color: #fe7210;
+    transition: all 0.4s;
+}
+
+.nav>li>a:hover {
+    /* color: #FE7210; */
+    color: #ffc58f;
+}
+
+/* 서브메뉴 */
+.sub {
+    position: absolute;
+    top: 75.5px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: 20px;
+    display: none;
+}
+
+.nav>li {
+    position: relative;
+}
+
+.sub a {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.4s;
+    padding: 8px 0;
+}
+
+.sub a:hover {
+    color: #ffc58f;
+}
+
+/* 서브메뉴 배경 */
+.nav .sub_bg {
+    position: absolute;
+    left: 0%;
+    top: 75.5px;
+    width: 100%;
+    z-index: 99;
+    height: 206px;
+    background-color: rgba(255, 255, 255, 1);
+    border-top: 1px solid #ffcaa4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+/* 메인배너 */
+/* 스와이퍼 메인배너 */
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+/* 스와이퍼 버튼 */
+.swiper-pagination-bullet {
+    background-color: #ffcaa4;
+    width: 30px;
+    height: 8px;
+    border-radius: 3px;
+}
+
+
+.swiper-pagination-bullet-active {
+    background-color: #fe7210;
+}
+
+/* 프로모션 섹션 */
+#section1 {
+    width: 580px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.promotion {
+    padding-bottom: 80px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+}
+
+.promotion li a {
+    width: 100px;
+    height: 80px;
+    border-radius: 0 0 200px 200px;
+    color: #fff;
+    display: block;
+    background-color: #FECB6F;
+    transition: all 0.3s;
+}
+
+.promotion p {
+    font-size: 20px;
+    padding-top: 20px;
+}
+.promotion li{
+    position: relative;
+}
+.list_icon1{
+    position: absolute;
+    top: -61px;
+    left: 20px;
+    z-index: 10;
+}
+.list_icon2{
+    position: absolute;
+    top: -64px;
+    left: -14px;
+    z-index: 10;
+}
+.list_icon3{
+    position: absolute;
+    top: -63px;
+    left: 18px;
+    z-index: 10;
+}
+.list_icon4{
+    position: absolute;
+    top: -56px;
+    left: 15px;
+    z-index: 10;
+}
+
+.pro1 {
+
+}
+
+.pro2 {
+
+}
+
+.pro3 {
+
+}
+
+.pro4 {
+
+}
+
+.promotion li a:hover, .promotion .pro3{
+    background-color: #FFA33A;
+    text-shadow: 0px 0px 8px #B71D1D;
+}
+
+
+/* 검색 */
+.search{
+    margin: auto;
+    width: 1320px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.search a img{
+    display: block;
+}
+.search a{
+    background-color: #FECB6F;
+    padding: 7px 12px;
+    border-radius: 0 30px 30px 0;
+}
+input{
+    width: 220px;
+    background-color: #FFEBD6;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    color: #333;
+}
+input::placeholder{
+    color: #ccc;
+}
+
+/* 프로덕트 스와이퍼 */
+.screen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    /* cursor: pointer; */
+}
+.screen img{
+    display: block;
+    transition: 0.8s;
+}
+
+.top{
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+
+.p_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.k_product .screen:hover .p_icon {
+    opacity: 1;
+    transition-delay: 0.15s;
+
+}
+
+.k_product .screen:hover .top {
+    transition: all 0.4s;
+    opacity: 1;
+}
+.k_product .screen:hover img{
+    transform: scale(1.15);
+}
+
+.p_icon a {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(238, 238, 238, 0.9);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.p_icon a:nth-child(1) {
+    margin-left: 0;
+}
+
+.p_icon a img {
+    width: 22px;
+    transition: all 0.3s;
+    filter: saturate(0%) brightness(190%);
+}
+
+.p_icon a img.on,
+.p_icon a:hover img {
+    filter: saturate(100%) brightness(100%);
+}
+
+/* 프로덕트 */
+.section2 {
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding-bottom: 220px;
+}
+
+/* 섹션별 폰트 통합 */
+#section1>h2,
+.section_wrap>h2,
+.section3>h2,
+.section4>h2,
+.section5>h2 {
+    font-size: 36px;
+    color: #fe7210;
+    font-family: "Poetsen One";
+}
+
+#section1>p,
+.section_wrap>p,
+.section3>p,
+.section4>p {
+    padding: 15px 0 50px 0;
+}
+.section6{
+    padding-bottom: 25px;
+}
+
+.k_product {
+    width: 1320px;
+    justify-content: left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 40px 29px;
+}
+
+.k_product h3 {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 30px;
+}
+
+.k_product p {
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 8px;
+    color: #999;
+}
+
+.k_product span {
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: #999;
+}
+.k_product .price{
+    font-size: 20px;
+    color: #101010;
+    font-weight: 800;
+    padding-top: 25px;
+}
+
+
+/* 신제품/몽스샤워 */
+.section4 {
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* 푸터 */
+.footer{
+    width: 100%;
+    height: 355px;
+    background-color: #FFE4D6;
+    color: #808080;
+}
+.footer a{
+    color: #808080;
+    font-size: 14px;
+}
+.footer_top{
+    height: 56px;
+    border-bottom: 1px solid #ccc;
+}
+.foot_top_in{
+    width: 1320px;
+    height: 56px;
+    margin: 0 auto;
+}
+.foot_top_in ul{
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.foot_top_in ul a{
+    margin-right: 40px;
+}
+.footer_in{
+    width: 1320px;
+    height: 299px;
+    margin: 0 auto;
+    padding: 35px 0;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+}
+.company_info p{
+    margin-top: 5px;
+}
+
+.foot_service{
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.foot_service div{
+    margin-left: 120px;
+}
+.foot_service div h3{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.foot_service div p{
+    margin-bottom: 5px;
+}
+.foot_service div p:nth-child(1){
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Poetsen One';
+    margin-bottom: 10px;
+}
+.sns{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.sns a{
+    display: block;
+    margin: 20px 15px 25px 0;
+
+}
+.sns a img{
+    width: 50px;
+    filter: grayscale(1.0);
+    opacity: 0.5;
+}
+.sns a img:hover{
+    transition: all 0.6s;
+    filter: grayscale(0);
+    opacity: 1;
+}
+.company_info ul{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.company_info h4{
+    font-weight: 400;
+}
+
+/* 제품페이지 */

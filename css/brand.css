@@ -1,0 +1,565 @@
+@charset "utf-8";
+
+/* 여백초기화 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #101010;
+}
+/* 탑버튼 부드럽게 */
+html{
+    scroll-behavior: smooth;
+}
+/* 페이지 설정 */
+body {
+    font-family: "Pretendard", "Poetsen One";
+    line-height: 1.5;
+    font-size: 17px;
+    color: #101010;
+    min-width: 1320px;
+}
+
+/* 탑버튼 */
+.btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    animation: top_btn 1.2s alternate infinite linear;
+}
+
+/* 헤더 */
+#header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.8s ease;
+    /* backdrop-filter: blur(4px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 120;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 부드러운 애니메이션 */
+    transition: all 1s;
+}
+
+/* 자바스크립트로 추가될 클래스 */
+#header.nav-up {
+    /* 헤더 높이만큼 주기 */
+    top: -76px;
+}
+
+.gnb {
+    width: 1320px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gnb .logo>img {
+    display: block;
+    /* padding: 12.4px; */
+}
+
+.gnb_icon {
+    display: flex;
+}
+
+.gnb_icon>li>a {
+    margin-left: 20px;
+}
+
+.nav {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.nav>li>a {
+    display: block;
+    margin: 25px 30px;
+    font-family: "Poetsen One";
+    /* font-weight: 900; */
+    color: #fe7210;
+    transition: all 0.4s;
+}
+
+.nav>li>a:hover {
+    /* color: #FE7210; */
+    color: #ffc58f;
+}
+
+/* 서브메뉴 */
+.sub {
+    position: absolute;
+    top: 75.5px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    margin-top: 20px;
+    display: none;
+}
+
+.nav>li {
+    position: relative;
+}
+
+.sub a {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.4s;
+    padding: 8px 0;
+}
+
+.sub a:hover {
+    color: #ffc58f;
+}
+
+/* 서브메뉴 배경 */
+.nav .sub_bg {
+    position: absolute;
+    left: 0%;
+    top: 75.5px;
+    width: 100%;
+    z-index: 99;
+    height: 206px;
+    background-color: rgba(255, 255, 255, 1);
+    border-top: 1px solid #ffcaa4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+/* 브랜드 배너 */
+#brand {
+    padding-bottom: 100px;
+}
+
+#brand>img {
+    width: 100%;
+}
+
+.brand_cr_box {
+    width: 1320px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 배너 캐릭터 */
+.brand_cr_box img {
+    display: block;
+    position: absolute;
+}
+
+.gomi {
+    top: -270px;
+    left: 0;
+}
+
+.ari {
+    top: -150px;
+    left: 230px;
+}
+
+.guri {
+    top: -270px;
+    right: 300px;
+}
+
+.mong {
+    top: -220px;
+    right: 0;
+}
+
+/* 브랜드 로고 */
+#br_logo {
+    width: 1320px;
+    margin: 220px auto;
+    text-align: center;
+    font-family: "Poetsen One";
+    font-size: 20px;
+}
+
+#br_txt_float h1 {
+    text-align: center;
+    font-family: "Poetsen One";
+    margin-bottom: 30px;
+    font-size: 48px;
+}
+
+/* 브랜드 소개 */
+#intro {
+    overflow: hidden;
+}
+
+.intro_in {
+    margin: 0 auto;
+    width: 1320px;
+}
+
+.intro_box {
+    background: #FFBE6F;
+    width: 1500px;
+    height: 370px;
+    margin: 230px 0;
+    border-radius: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.intro_in .i01 {
+    margin-left: -900px;
+    padding: 80px 0 0 900px;
+}
+
+.intro_in .i02 {
+    margin-left: 700px;
+    padding: 80px 0 0 137px;
+}
+
+.intro_in .i03 {
+    margin-left: -900px;
+    padding: 80px 0 0 900px;
+}
+
+.intro_in .i04 {
+    margin-left: 700px;
+    padding: 80px 0 0 137px;
+}
+
+.intro_in h3 {
+    font-size: 20px;
+}
+
+.intro_in p {
+    width: 490px;
+    height: 200px;
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgba(16, 16, 16, 0.6)
+}
+
+.intro_box>img {
+    position: absolute;
+}
+.tag{
+    position: absolute;
+    top: -55px;
+    right: 40px;
+    font-size: 48px;
+    font-family: "Poetsen One";
+    color: #FE8C12;
+}
+.tag_r{
+    position: absolute;
+    top: -55px;
+    left: 40px;
+    font-size: 48px;
+    font-family: "Poetsen One";
+    color: #FE8C12;
+    
+}
+
+.br_intro01 {
+    top: -212px;
+    left: 900px;
+}
+
+.br_intro02 {
+    top: -212px;
+    left: 495px;
+}
+
+.br_intro03 {
+    top: -212px;
+    left: 900px;
+}
+
+.br_intro04 {
+    top: -212px;
+    left: 495px;
+}
+
+/* 슬로건 */
+#slogan {
+    overflow: hidden;
+    height: 930px;
+    background: #58D1D5;
+    margin: 330px auto;
+}
+
+.slogan_in {
+    width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#slogan:hover .windo{
+    animation: windo 1.5s linear;
+}
+
+.txt_box h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.txt_box span {
+    font-weight: 400;
+    color: rgba(16, 16, 16, 0.8);
+}
+
+.txt_box p {
+    color: rgba(16, 16, 16, 0.8);
+}
+
+.windo {
+    width: 550px;
+    height: 570px;
+    background: #CBE4E5;
+    border-radius: 500px 500px 0 0;
+}
+
+@keyframes windo {
+
+    0% {
+        transform: scaleX(0);
+        border-radius: 50px 50px 0 0;
+    }
+    100% {
+        transform: scaleX(1);
+        border-radius: 300px 300px 0 0;
+    }
+}
+.windo_box{
+    position: relative;
+}
+
+.brand_cr{
+    position: absolute;
+    right: -32px;
+    bottom: -37px;
+}
+
+/* 키워드 */
+#keyword{
+    display: flex;
+    margin-bottom: 320px;
+}
+#keyword img{
+    display: block;
+    width: 100%;
+    transition: 0.6s;
+    filter: grayscale(90%) brightness(90%);
+}
+#keyword a:hover img{
+    filter: grayscale(0);
+}
+#keyword a:hover p{
+    opacity: 1;
+}
+#keyword a{
+    display: block;
+    width: 33.3333%;
+    position: relative;
+}
+#keyword p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+/* 맺음말 */
+#end{
+    width: 1320px;
+    margin: 330px auto;
+}
+.ending{
+    height: 654px;
+    border-radius: 30px;
+}
+.ending img{
+    display: block;
+    filter: brightness(65%);
+}
+.swiper-wrapper{
+position: relative;
+}
+.end_txt_box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: #fff;
+    text-align: center;
+}
+.end_txt_box h1{
+    padding-bottom: 25px;
+    font-size: 48px;
+}
+.end_txt_box span{
+    display: block;
+    width: 100px;
+    height: 2px;
+    margin: auto;
+    background-color: #fff;
+}
+.end_txt_box p{
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+/* 푸터 */
+.footer{
+    width: 100%;
+    height: 355px;
+    background-color: #FFE4D6;
+    color: #808080;
+}
+.footer a{
+    color: #808080;
+    font-size: 14px;
+}
+.footer_top{
+    height: 56px;
+    border-bottom: 1px solid #ccc;
+}
+.foot_top_in{
+    width: 1320px;
+    height: 56px;
+    margin: 0 auto;
+}
+.foot_top_in ul{
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.foot_top_in ul a{
+    margin-right: 40px;
+}
+.footer_in{
+    width: 1320px;
+    height: 299px;
+    margin: 0 auto;
+    padding: 35px 0;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+}
+.company_info p{
+    margin-top: 5px;
+}
+
+.foot_service{
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.foot_service div{
+    margin-left: 120px;
+}
+.foot_service div h3{
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.foot_service div p{
+    margin-bottom: 5px;
+}
+.foot_service div p:nth-child(1){
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Poetsen One';
+    margin-bottom: 10px;
+}
+.sns{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.sns a{
+    display: block;
+    margin: 20px 15px 25px 0;
+
+}
+.sns a img{
+    width: 50px;
+    filter: grayscale(1.0);
+    opacity: 0.5;
+}
+.sns a img:hover{
+    transition: all 0.6s;
+    filter: grayscale(0);
+    opacity: 1;
+}
+.company_info ul{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.company_info h4{
+    font-weight: 400;
+}
+
+
+/* 탑버튼 */
+.btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    animation: top_btn 1.2s alternate infinite linear;
+}
+
+.btn:hover {
+    animation: none;
+}
+
+@keyframes top_btn {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
